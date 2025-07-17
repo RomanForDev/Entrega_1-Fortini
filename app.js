@@ -29,13 +29,12 @@ estaInvitado();
 
 function estaInvitado() {
     let buscar = prompt("Ingrese el nombre: ")
-    while (invitados.length > 1) {
+    while (invitados.length > 0) {
         if (invitados.includes(buscar)) {
-            alert(`${buscar} está invitado a la fiesta!.`)
+            alert(`${buscar} está invitado a la fiesta!.`);
             invitados.pop(buscar);
-        }else {
-            alert(`${buscar} no esta invitado a la fiesta.`)
-            break;
-        }
+        }else{
+            alert(`${buscar} no esta invitado a la fiesta.`);
+        } // Falla el else, queda en bucle hasta que completa el lenght del array.
     }
 }
