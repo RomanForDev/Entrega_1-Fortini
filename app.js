@@ -24,28 +24,28 @@ function armarLista() {
 //     }
 // }
 
-armarLista();
-estaInvitado();
+// armarLista();
+// estaInvitado();
 
-function estaInvitado() {
-    let buscar = prompt("Ingrese el nombre: ")
-    while (invitados.length > 0) { //chequear el número porque esta haciendo mal los ciclos.
-        if (!invitados.includes(buscar)){
-            alert(`${buscar} no esta invitado a la fiesta.`)
-            console.log(invitados);
-            return estaInvitado(); // Hay que descomentar esto para probar.
-        }else if (invitados.includes(buscar)) {
-            alert(`${buscar} está invitado a la fiesta!.`);
-            x = invitados.indexOf(buscar)
-            invitados.splice(x, 1);
-            console.log(invitados);
-            return estaInvitado(); // Hay que descomentar esto para probar.
-        // } else if (invitados.length < 1) {
-        //     alert("Ya han ingresado todos los invitados!")
-        //     break;
-        // }
-    }} // ver si con un do while no queda mejor. No esta ejecutando el último else if por el número en línea 33 pero la función se corta igual
-}
+// function estaInvitado() {
+//     let buscar = prompt("Ingrese el nombre: ")
+//     while (invitados.length > 0) { //chequear el número porque esta haciendo mal los ciclos.
+//         if (!invitados.includes(buscar)){
+//             alert(`${buscar} no esta invitado a la fiesta.`)
+//             console.log(invitados);
+//             // estaInvitado(); // Hay que descomentar esto para probar.
+//         }else if (invitados.includes(buscar)) {
+//             alert(`${buscar} está invitado a la fiesta!.`);
+//             x = invitados.indexOf(buscar)
+//             invitados.splice(x, 1);
+//             console.log(invitados);
+//             // estaInvitado(); // Hay que descomentar esto para probar.
+//         } else if (invitados.length === 0) {
+//             alert("Ya han ingresado todos los invitados!")
+//             break;
+//         }
+//     }} // ver si con un do while no queda mejor. No esta ejecutando el último else if por el número en línea 33 pero la función se corta igual
+
 
 /// prueba con do while ///
 
@@ -60,9 +60,9 @@ function estaInvitado() {
 //             x = invitados.indexOf(buscar)
 //             invitados.splice(x, 1);
 //             return estaInvitado(); // Hay que descomentar esto para probar.
-        // } else {
-        //     alert("Ya han ingresado todos los invitados!")
-        //     break;
+//         } else {
+//             alert("Ya han ingresado todos los invitados!")
+//             break;
 //         }
 //     } // ver si con un do while no queda mejor. No esta ejecutando el último else if por el número en línea 33 pero la función se corta igual
 // }
