@@ -15,25 +15,27 @@ function armarLista() {
     return console.log(invitados);
 }
 
-function estaInvitado() {
-    let buscar = prompt("Ingrese el nombre: ")
-    if (invitados.includes(buscar)) {
-        alert(`${buscar} está invitado a la fiesta!.`)
-    }else {
-        alert(`${buscar} no esta invitado a la fiesta.`)
-    }
-}
+// function estaInvitado() {
+//     let buscar = prompt("Ingrese el nombre: ")
+//     if (invitados.includes(buscar)) {
+//         alert(`${buscar} está invitado a la fiesta!.`)
+//     }else {
+//         alert(`${buscar} no esta invitado a la fiesta.`)
+//     }
+// }
 
 armarLista();
 estaInvitado();
 
-// function estaInvitado() {
-//     let buscar = prompt("Ingrese el nombre: ")
-//     for (let x = 0; x < invitados.length; x++) {
-//         if (invitados.includes(buscar)) {
-//             alert(`${buscar} está invitado a la fiesta!.`)
-//         }else {
-//             alert(`${buscar} no esta invitado a la fiesta.`)
-//         }
-
-// }
+function estaInvitado() {
+    let buscar = prompt("Ingrese el nombre: ")
+    while (invitados.length > 1) {
+        if (invitados.includes(buscar)) {
+            alert(`${buscar} está invitado a la fiesta!.`)
+            invitados.pop(buscar);
+        }else {
+            alert(`${buscar} no esta invitado a la fiesta.`)
+            break;
+        }
+    }
+}
