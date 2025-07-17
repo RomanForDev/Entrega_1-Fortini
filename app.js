@@ -29,12 +29,14 @@ estaInvitado();
 
 function estaInvitado() {
     let buscar = prompt("Ingrese el nombre: ")
-    while (invitados.length > 0) {
-        if (invitados.includes(buscar)) {
+    while (invitados.length >= 0) {
+        if (!invitados.includes(buscar)){
+            alert(`${buscar} no esta invitado a la fiesta.`)
+            // return estaInvitado(); // Hay que descomentar esto para probar.
+        }else if (invitados.includes(buscar)) {
             alert(`${buscar} está invitado a la fiesta!.`);
             invitados.pop(buscar);
-        }else{
-            alert(`${buscar} no esta invitado a la fiesta.`);
-        } // Falla el else, queda en bucle hasta que completa el lenght del array.
+            // return estaInvitado(); // Hay que descomentar esto para probar.
+        } // Falla al ejecutar de nuevo la función porque el array se vuelve a foja cero.
     }
-}
+} // Esta haciendo cualquier cosa. Esta tardando 3 ciclos en ejecutar el pop porque el método a usar no es ese, hay que slicearlo y eliminar el elemento de ese índice.
