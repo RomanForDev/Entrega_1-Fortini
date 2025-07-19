@@ -1,7 +1,3 @@
-// Simulador de listado para una fiesta
-// Simulador de calculadora para carrito de compras
-// 
-
 // listado fiesta
 
 let invitados = [];
@@ -15,6 +11,32 @@ function armarLista() {
     return console.log(invitados);
 }
 
+
+function estaInvitado() {
+    let buscar = prompt("Ingrese el nombre: ")
+    while (invitados.length > 1) {
+        if (!invitados.includes(buscar)){
+            alert(`${buscar} no esta invitado a la fiesta.`)
+            console.log(invitados);
+            estaInvitado();
+        }else if (invitados.includes(buscar)) {
+            alert(`${buscar} está invitado a la fiesta!.`);
+            x = invitados.indexOf(buscar)
+            invitados.splice(x, 1); // Pa mi el problema es esto. Aguante python...
+            console.log(invitados);
+            estaInvitado();
+        }
+    }
+    alert("No hay más invitados para buscar."); // Esto se ejecuta la misma cantidad de veces que se eliminó un invitado pese a estar fuera del ciclo. Why???????
+    console.log(invitados);
+}
+
+armarLista();
+estaInvitado();
+console.log(invitados.length);
+
+// Otra forma pero sin eliminar los elementos del array:
+
 // function estaInvitado() {
 //     let buscar = prompt("Ingrese el nombre: ")
 //     if (invitados.includes(buscar)) {
@@ -26,23 +48,3 @@ function armarLista() {
 
 // armarLista();
 // estaInvitado();
-
-function estaInvitado() {
-    let buscar = prompt("Ingrese el nombre: ")
-    while (invitados.length > 1) { //chequear el número porque esta haciendo mal los ciclos.
-        if (!invitados.includes(buscar)){
-            alert(`${buscar} no esta invitado a la fiesta.`)
-            console.log(invitados);
-            estaInvitado(); // Hay que descomentar esto para probar.
-        }else if (invitados.includes(buscar)) {
-            alert(`${buscar} está invitado a la fiesta!.`);
-            x = invitados.indexOf(buscar)
-            invitados.splice(x, 1);
-            console.log(invitados);
-            estaInvitado(); // Hay que descomentar esto para probar.
-        }
-    }} // ver si con un do while no queda mejor. No esta ejecutando el último else if por el número en línea 33 pero la función se corta igual
-
-armarLista();
-estaInvitado();
-console.log(invitados.length);
