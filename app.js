@@ -21,17 +21,15 @@ function estaInvitado() {
         }else {
             alert(`${buscar} está invitado a la fiesta!.`);
             x = invitados.indexOf(buscar)
-            invitados.splice(x, 1);
+            invitados.splice(x, 1); // Splice no está en el contenido, otra solución era mandarlo al principio o final del array y eliminarlo con shift o pop.
             console.log(invitados);
         }
     }
     alert("No hay más invitados para buscar."); 
-    console.log(invitados);
 }
 
 armarLista();
 estaInvitado();
-console.log(invitados.length);
 
 // Otra forma pero sin eliminar los elementos del array:
 
