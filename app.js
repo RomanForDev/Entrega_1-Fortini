@@ -4,6 +4,9 @@ let invitados = [];
 
 function armarLista() {
     let cantidad = parseInt(prompt("Indique cuantas personas va a invitar a la fiesta: "))
+    if (isNaN(cantidad) || cantidad <= 0) {
+        alert("Por favor, ingrese un número válido mayor a 0. Y no me pongas letras o símbolos, cabezón.");
+        return armarLista();}
     for (let i = 0; i < cantidad; i++) {
         nombre = prompt("Ingrese el nombre de los invitados: ")
         invitados.push(nombre);
