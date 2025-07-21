@@ -13,21 +13,19 @@ function armarLista() {
 
 
 function estaInvitado() {
-    let buscar = prompt("Ingrese el nombre: ")
-    while (invitados.length > 1) {
+    while (invitados.length > 0) {
+        let buscar = prompt("Ingrese el nombre: ")
         if (!invitados.includes(buscar)){
             alert(`${buscar} no esta invitado a la fiesta.`)
             console.log(invitados);
-            estaInvitado();
-        }else if (invitados.includes(buscar)) {
+        }else {
             alert(`${buscar} está invitado a la fiesta!.`);
             x = invitados.indexOf(buscar)
-            invitados.splice(x, 1); // Pa mi el problema es esto. Aguante python...
+            invitados.splice(x, 1);
             console.log(invitados);
-            estaInvitado();
         }
     }
-    alert("No hay más invitados para buscar."); // Esto se ejecuta la misma cantidad de veces que se eliminó un invitado pese a estar fuera del ciclo. Why???????
+    alert("No hay más invitados para buscar."); 
     console.log(invitados);
 }
 
